@@ -19,23 +19,16 @@
     "description" : "Sample Tag"
   } ],
   "paths" : {
-    "/example/ping" : {
-      "post" : {
-        "tags" : [ ],
+    "/demo-001/hello-world" : {
+      "get" : {
+        "tags" : [ "project" ],
         "summary" : "",
-        "description" : "ping you like /ping?name=jake",
-        "operationId" : "TemplateExampleService#Ping",
-        "parameters" : [ {
-          "name" : "name",
-          "in" : "query",
-          "schema" : {
-            "type" : "string",
-            "readOnly" : false
-          }
-        } ],
+        "description" : "Say hello to the world",
+        "operationId" : "Demo001Service#ExampleSayHello",
+        "parameters" : [ ],
         "responses" : {
           "200" : {
-            "description" : "ping you like /ping?name=jake",
+            "description" : "Say hello to the world",
             "content" : {
               "application/json" : {
                 "schema" : {
@@ -75,54 +68,9 @@
           "inputPlural" : false,
           "outputPlural" : false,
           "pageable" : false,
-          "protoFrom" : "com/apihug/sample/proto/api/example/api.proto",
+          "protoFrom" : "com/apihug/sample/proto/api/demo001/api.proto",
           "empty" : false,
-          "serviceClz" : "com.apihug.sample.wire.api.example.TemplateExampleService",
-          "priority" : "HIGH",
-          "group" : "CUSTOMER"
-        }
-      }
-    },
-    "/example/post-test" : {
-      "post" : {
-        "tags" : [ ],
-        "summary" : "",
-        "description" : "post test example",
-        "operationId" : "TemplateExampleService#ExamplePost",
-        "parameters" : [ ],
-        "requestBody" : {
-          "content" : {
-            "application/json" : {
-              "schema" : {
-                "type" : "object",
-                "$ref" : "#/components/schemas/TemplateExampleRequest"
-              }
-            }
-          }
-        },
-        "responses" : {
-          "200" : {
-            "description" : "post test example",
-            "content" : {
-              "application/json" : {
-                "schema" : {
-                  "$ref" : "#/components/schemas/TemplateExampleResponseResult"
-                }
-              }
-            }
-          }
-        },
-        "deprecated" : false,
-        "security" : [ ],
-        "x-hope-operation" : {
-          "deprecated" : false,
-          "wrapper" : true,
-          "inputPlural" : false,
-          "outputPlural" : false,
-          "pageable" : false,
-          "protoFrom" : "com/apihug/sample/proto/api/example/api.proto",
-          "empty" : false,
-          "serviceClz" : "com.apihug.sample.wire.api.example.TemplateExampleService",
+          "serviceClz" : "com.apihug.sample.wire.api.demo001.Demo001Service",
           "priority" : "HIGH",
           "group" : "CUSTOMER"
         }
@@ -131,6 +79,63 @@
   },
   "components" : {
     "schemas" : {
+      "Demo001Enum" : {
+        "default" : "EXAMPLE_ENUM_GOOD",
+        "description" : "Example Enum",
+        "oneOf" : [ {
+          "const" : "EXAMPLE_ENUM_GOOD",
+          "description" : "GOOD",
+          "example" : "EXAMPLE_ENUM_GOOD",
+          "title" : "EXAMPLE_ENUM_GOOD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-desc2" : "you are good man"
+        }, {
+          "const" : "EXAMPLE_ENUM_BAD",
+          "description" : "BAD",
+          "example" : "EXAMPLE_ENUM_BAD",
+          "title" : "EXAMPLE_ENUM_BAD",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-desc2" : "you are bad man"
+        } ],
+        "title" : "Demo001Enum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.sample.wire.infra.demo001.Demo001Enum",
+          "protoFrom" : "com/apihug/sample/proto/infra/demo001/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
+      "DemoAuthorityEnum" : {
+        "default" : "USER_ADD",
+        "description" : "Example Authority Enum for the project, MODIFY IT",
+        "oneOf" : [ {
+          "const" : "USER_ADD",
+          "description" : "user:add",
+          "example" : "USER_ADD",
+          "title" : "USER_ADD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-desc2" : "Authority to remove user(Remove or modify this template sample)"
+        }, {
+          "const" : "USER_DELETE",
+          "description" : "user:remove",
+          "example" : "USER_DELETE",
+          "title" : "USER_DELETE",
+          "x-hope-enum-item-code" : 2,
+          "x-hope-enum-item-desc2" : "Authority to delete user(Remove or modify this template sample)"
+        }, {
+          "const" : "USER_BLOCK",
+          "description" : "user:block",
+          "example" : "USER_BLOCK",
+          "title" : "USER_BLOCK",
+          "x-hope-enum-item-code" : 3,
+          "x-hope-enum-item-desc2" : "Authority to block user"
+        } ],
+        "title" : "DemoAuthorityEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.sample.wire.infra.settings.DemoAuthorityEnum",
+          "protoFrom" : "com/apihug/sample/proto/infra/settings/authority.proto"
+        },
+        "x-hope-enum-type" : "true"
+      },
       "Error" : {
         "type" : "object",
         "description" : "错误对象",
@@ -204,6 +209,27 @@
         },
         "title" : "Error"
       },
+      "ExampleRequest" : {
+        "type" : "object",
+        "description" : "This is an example request",
+        "properties" : {
+          "name" : {
+            "type" : "string",
+            "description" : "name of the user",
+            "example" : "My Lord",
+            "maxLength" : 32,
+            "x-hope-mock" : {
+              "nature" : "NAME",
+              "name" : "nature"
+            }
+          }
+        },
+        "required" : [ "name" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.sample.wire.api.demo001.values.ExampleRequest",
+          "protoFrom" : "com/apihug/sample/proto/api/demo001/values/request.proto"
+        }
+      },
       "ProblemPhase" : {
         "default" : "CONTROLLER",
         "description" : "错误层次",
@@ -268,131 +294,6 @@
         "title" : "ProblemSeverity",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
         "x-hope-enum-type" : "true"
-      },
-      "SampleAuthorityEnum" : {
-        "default" : "USER_ADD",
-        "description" : "Example Authority Enum for the project, MODIFY IT",
-        "oneOf" : [ {
-          "const" : "USER_ADD",
-          "description" : "user:add",
-          "example" : "USER_ADD",
-          "title" : "USER_ADD",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-desc2" : "Authority to remove user(Remove or modify this template sample)"
-        }, {
-          "const" : "USER_DELETE",
-          "description" : "user:remove",
-          "example" : "USER_DELETE",
-          "title" : "USER_DELETE",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-desc2" : "Authority to delete user(Remove or modify this template sample)"
-        } ],
-        "title" : "SampleAuthorityEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.sample.wire.infra.settings.SampleAuthorityEnum",
-          "protoFrom" : "com/apihug/sample/proto/infra/settings/authority.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
-      "TemplateExampleEnum" : {
-        "default" : "REMOVE_ME",
-        "description" : "Remember to remove this enum this is example from template",
-        "oneOf" : [ {
-          "const" : "REMOVE_ME",
-          "description" : "remove me",
-          "example" : "REMOVE_ME",
-          "title" : "REMOVE_ME",
-          "x-hope-enum-item-code" : 1,
-          "x-hope-enum-item-desc2" : "Please remove this example"
-        }, {
-          "const" : "RIGHT_NOW",
-          "description" : "right now",
-          "example" : "RIGHT_NOW",
-          "title" : "RIGHT_NOW",
-          "x-hope-enum-item-code" : 2,
-          "x-hope-enum-item-desc2" : "Remove it right now"
-        } ],
-        "title" : "TemplateExampleEnum",
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.sample.wire.infra.settings.example.TemplateExampleEnum",
-          "protoFrom" : "com/apihug/sample/proto/infra/settings/example/constant.proto"
-        },
-        "x-hope-enum-type" : "true"
-      },
-      "TemplateExampleRequest" : {
-        "type" : "object",
-        "description" : "This is a template example request,REMOVE IT",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "user input name",
-            "example" : "Jake"
-          },
-          "email" : {
-            "type" : "string",
-            "format" : "email",
-            "description" : "user input email",
-            "example" : "jake@bigger.com",
-            "x-hope-validation" : {
-              "email" : true
-            },
-            "x-hope-mock" : {
-              "nature" : "EMAIL",
-              "name" : "nature"
-            }
-          }
-        },
-        "required" : [ "name" ],
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.sample.wire.api.example.request.TemplateExampleRequest",
-          "protoFrom" : "com/apihug/sample/proto/api/example/request/example.proto"
-        }
-      },
-      "TemplateExampleResponse" : {
-        "type" : "object",
-        "description" : "This is a template example response",
-        "properties" : {
-          "name" : {
-            "type" : "string",
-            "description" : "user input name",
-            "example" : "Jake"
-          },
-          "hello" : {
-            "type" : "string",
-            "description" : "response hello",
-            "example" : "hello Jake"
-          }
-        },
-        "required" : [ "hello" ],
-        "x-hope-rt-meta" : {
-          "clz" : "com.apihug.sample.wire.api.example.response.TemplateExampleResponse",
-          "protoFrom" : "com/apihug/sample/proto/api/example/response/example.proto"
-        }
-      },
-      "TemplateExampleResponseResult" : {
-        "type" : "object",
-        "properties" : {
-          "code" : {
-            "type" : "integer",
-            "format" : "int32",
-            "description" : "返回码,零成功,非零失败"
-          },
-          "message" : {
-            "type" : "string",
-            "description" : "返回提示信息"
-          },
-          "errors" : {
-            "type" : "array",
-            "description" : "错误详情列表",
-            "items" : {
-              "$ref" : "#/components/schemas/Error"
-            },
-            "title" : "errors"
-          },
-          "data" : {
-            "$ref" : "#/components/schemas/TemplateExampleResponse"
-          }
-        }
       }
     },
     "responses" : { },
@@ -457,7 +358,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-06-14",
-      "updatedTimestamp" : "2024-06-14 16:22:26",
+      "updatedTimestamp" : "2024-06-14 17:43:07",
       "createdBy" : "admin"
     },
     "persistence" : {
@@ -467,7 +368,7 @@
       "upper" : "DEFAULT"
     },
     "authority" : {
-      "enumClass" : "com.apihug.sample.wire.infra.settings.SampleAuthorityEnum",
+      "enumClass" : "com.apihug.sample.wire.infra.settings.DemoAuthorityEnum",
       "codePrefix" : 10240000
     }
   }

@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package com.apihug.sample.proto.api.demo001;
+
+import "extend/domain.proto";
+import "google/protobuf/empty.proto";
+import "swagger/annotations.proto";
+
+option (hope.domain.kind) = IDL;
+
+service Demo001Service {
+    option (hope.swagger.svc) = {
+        path: "/demo-001";
+        description: "Demo-001";
+    };
+
+    rpc ExampleSayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
+        option (hope.swagger.operation) = {
+            get: "/hello-world";
+            description: "Say hello to the world";
+            tags: "project";
+            priority: HIGH;
+        };
+    };
+}

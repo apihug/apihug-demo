@@ -1,10 +1,10 @@
 {
   "domain" : "sample",
   "version" : "0.1.1-SNAPSHOT",
-  "lastBuildTime" : "2024-06-14 16:22:26",
+  "lastBuildTime" : "2024-06-14 17:43:07",
   "codeOffset" : 0,
-  "name" : "SampleAuthorityEnum",
-  "javaClass" : "com.apihug.sample.wire.infra.settings.SampleAuthorityEnum",
+  "name" : "DemoAuthorityEnum",
+  "javaClass" : "com.apihug.sample.wire.infra.settings.DemoAuthorityEnum",
   "deprecated" : false,
   "description" : "Example Authority Enum for the project, MODIFY IT",
   "items" : [ {
@@ -18,6 +18,12 @@
     "name" : "USER_DELETE",
     "expression" : "user:remove",
     "description" : "Authority to delete user(Remove or modify this template sample)",
+    "deprecated" : false
+  }, {
+    "code" : 3,
+    "name" : "USER_BLOCK",
+    "expression" : "user:block",
+    "description" : "Authority to block user",
     "deprecated" : false
   } ]
 }

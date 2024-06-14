@@ -8,7 +8,7 @@
     "tenantType" : "LONG"
   },
   "authority" : {
-    "enumClass" : "com.apihug.sample.proto.infra.settings.SampleAuthorityEnum",
+    "enumClass" : "com.apihug.sample.proto.infra.settings.DemoAuthorityEnum",
     "codePrefix" : 10240000
   },
   "createdAt": "2024-06-14",

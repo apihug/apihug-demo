@@ -1,4 +1,4 @@
-package com.apihug.sample.wire.infra.settings.example;
+package com.apihug.sample.wire.infra.settings;
 
 import hope.common.enumeration.Enumeration;
 import hope.common.meta.annotation.Kind;
@@ -18,44 +18,47 @@ import javax.annotation.Generated;
     enumAsRef = true,
     nullable = false,
     allowableValues = {
-        "REMOVE_ME",
-        "RIGHT_NOW"
+        "USER_ADD",
+        "USER_DELETE",
+        "USER_BLOCK"
     },
-    example = "REMOVE_ME",
-    description = "Remember to remove this enum this is example from template"
+    example = "USER_ADD",
+    description = "Example Authority Enum for the project, MODIFY IT"
 )
 @Generated("H.O.P.E. Infra Team")
 @ProtoFrom(
-    value = "com/apihug/sample/proto/infra/settings/example/constant.proto",
-    entity = "TemplateExampleEnum",
+    value = "com/apihug/sample/proto/infra/settings/authority.proto",
+    entity = "DemoAuthorityEnum",
     kind = Kind.ENUM
 )
-public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
+public enum DemoAuthorityEnum implements Enumeration<DemoAuthorityEnum> {
   NA(-1, "Default Placeholder Should NEVER be used", "默认占位枚举请勿使用"),
 
-  REMOVE_ME(1, "remove me", "Please remove this example"),
+  USER_ADD(1, "user:add", "Authority to remove user(Remove or modify this template sample)"),
 
-  RIGHT_NOW(2, "right now", "Remove it right now");
+  USER_DELETE(2, "user:remove", "Authority to delete user(Remove or modify this template sample)"),
+
+  USER_BLOCK(3, "user:block", "Authority to block user");
 
   public static final List<String> VALUES;
 
-  public static final List<TemplateExampleEnum> ENUMS;
+  public static final List<DemoAuthorityEnum> ENUMS;
 
   public static final List<Integer> CODES;
 
-  public static final Map<String, TemplateExampleEnum> NAME_2_ENUM_MAP;
+  public static final Map<String, DemoAuthorityEnum> NAME_2_ENUM_MAP;
 
-  public static final Map<Integer, TemplateExampleEnum> CODE_2_ENUM_MAP;
+  public static final Map<Integer, DemoAuthorityEnum> CODE_2_ENUM_MAP;
 
-  public static final Enumeration.EnumerationsHelper<TemplateExampleEnum> HELPER;
+  public static final Enumeration.EnumerationsHelper<DemoAuthorityEnum> HELPER;
 
   static {
     List<String> _VALUES = new ArrayList<>();
-    List<TemplateExampleEnum> _ENUMS = new ArrayList<>();
+    List<DemoAuthorityEnum> _ENUMS = new ArrayList<>();
     List<Integer> _CODES = new ArrayList<>();
-    Map<String, TemplateExampleEnum> _NAME_2_ENUM_MAP = new LinkedHashMap<>();
-    Map<Integer, TemplateExampleEnum> _CODE_2_ENUM_MAP = new LinkedHashMap<>();
-    for (TemplateExampleEnum each : TemplateExampleEnum.values()) {
+    Map<String, DemoAuthorityEnum> _NAME_2_ENUM_MAP = new LinkedHashMap<>();
+    Map<Integer, DemoAuthorityEnum> _CODE_2_ENUM_MAP = new LinkedHashMap<>();
+    for (DemoAuthorityEnum each : DemoAuthorityEnum.values()) {
     	_VALUES.add(each.title());
     	_ENUMS.add(each);
     	_CODES.add(each.code());
@@ -68,15 +71,15 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
     NAME_2_ENUM_MAP = Collections.unmodifiableMap(_NAME_2_ENUM_MAP);
     CODE_2_ENUM_MAP = Collections.unmodifiableMap(_CODE_2_ENUM_MAP);
     HELPER =
-    new EnumerationsHelper<TemplateExampleEnum>() {
+    new EnumerationsHelper<DemoAuthorityEnum>() {
 
     @Override
-    public TemplateExampleEnum mapFromCode(int code) {
+    public DemoAuthorityEnum mapFromCode(int code) {
     	return CODE_2_ENUM_MAP.getOrDefault(code, NA);
     }
 
     @Override
-    public TemplateExampleEnum mapFromName(String name) {
+    public DemoAuthorityEnum mapFromName(String name) {
     if (name == null || name.isEmpty()) {
     	return NA;
     }
@@ -84,8 +87,8 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
     }
 
     @Override
-    public Class<TemplateExampleEnum> supportClz() {
-    	return TemplateExampleEnum.class;
+    public Class<DemoAuthorityEnum> supportClz() {
+    	return DemoAuthorityEnum.class;
     }
 
     @Override
@@ -94,7 +97,7 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
     }
 
     @Override
-    public List<TemplateExampleEnum> supportEnumerations() {
+    public List<DemoAuthorityEnum> supportEnumerations() {
     return ENUMS;
     }
 
@@ -114,14 +117,14 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
 
   public final boolean deprecated;
 
-  TemplateExampleEnum(int code, String description, String description2, boolean deprecated) {
+  DemoAuthorityEnum(int code, String description, String description2, boolean deprecated) {
     this.code = code;
     this.description = description;
     this.description2 = description2;
     this.deprecated = deprecated;
   }
 
-  TemplateExampleEnum(int code, String description, String description2) {
+  DemoAuthorityEnum(int code, String description, String description2) {
     this(code, description, description2, false);
   }
 
@@ -151,7 +154,7 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
   }
 
   @Override
-  public List<TemplateExampleEnum> supportEnumerations() {
+  public List<DemoAuthorityEnum> supportEnumerations() {
     return ENUMS;
   }
 
@@ -166,7 +169,7 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
   }
 
   @Override
-  public TemplateExampleEnum mapFromCode(int code) {
+  public DemoAuthorityEnum mapFromCode(int code) {
     if (this.code == code) {
       return this;
     }
@@ -175,7 +178,7 @@ public enum TemplateExampleEnum implements Enumeration<TemplateExampleEnum> {
   }
 
   @Override
-  public TemplateExampleEnum mapFromName(String name) {
+  public DemoAuthorityEnum mapFromName(String name) {
     if (name == null || name.isEmpty()) {
       return NA;
     }

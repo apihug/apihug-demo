@@ -1,24 +1,24 @@
 {
   "domain" : "sample",
   "version" : "0.1.1-SNAPSHOT",
-  "lastBuildTime" : "2024-06-14 16:22:26",
+  "lastBuildTime" : "2024-06-14 17:43:07",
   "dictionaries" : [ {
-    "name" : "TemplateExampleEnum",
-    "javaClass" : "com.apihug.sample.wire.infra.settings.example.TemplateExampleEnum",
-    "description" : "Remember to remove this enum this is example from template",
+    "name" : "Demo001Enum",
+    "javaClass" : "com.apihug.sample.wire.infra.demo001.Demo001Enum",
+    "description" : "Example Enum",
     "deprecated" : false,
     "domain" : "sample",
     "items" : [ {
       "code" : 1,
-      "title" : "REMOVE_ME",
-      "description" : "remove me",
-      "description2" : "Please remove this example",
+      "title" : "EXAMPLE_ENUM_GOOD",
+      "description" : "GOOD",
+      "description2" : "you are good man",
       "deprecated" : false
     }, {
       "code" : 2,
-      "title" : "RIGHT_NOW",
-      "description" : "right now",
-      "description2" : "Remove it right now",
+      "title" : "EXAMPLE_ENUM_BAD",
+      "description" : "BAD",
+      "description2" : "you are bad man",
       "deprecated" : false
     } ]
   } ]

@@ -7,13 +7,14 @@ import "extend/domain.proto";
 
 option (hope.domain.kind) = ENUM;
 
-enum  SampleAuthorityEnum {
+enum  DemoAuthorityEnum {
 
-    option (hope.swagger.enm) = {
-        description: "Example Authority Enum for the project, MODIFY IT"
-    };
+  option (hope.swagger.enm) = {
+    description: "Example Authority Enum for the project, MODIFY IT"
+  };
 
-    USER_ADD = 0 [(hope.constant.field) = {code: 1,message: "user:add", message2: "Authority to remove user(Remove or modify this template sample)"}];
-    USER_DELETE = 1 [(hope.constant.field) = {code: 2,message: "user:remove", message2: "Authority to delete user(Remove or modify this template sample)"}];
+  USER_ADD = 0 [(hope.constant.field) = {code: 1,message: "user:add", message2: "Authority to remove user(Remove or modify this template sample)"}];
+  USER_DELETE = 1 [(hope.constant.field) = {code: 2,message: "user:remove", message2: "Authority to delete user(Remove or modify this template sample)"}];
+  USER_BLOCK = 2 [(hope.constant.field) = {code: 3,message: "user:block", message2: "Authority to block user"}];
 
 }

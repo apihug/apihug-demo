@@ -15,8 +15,8 @@
   "status" : {
     "deprecated" : false,
     "createdTimestamp" : "2024-06-14",
-    "updatedTimestamp" : "2024-06-14 16:22:26",
-    "lastBuildTimestamp" : "2024-06-14 16:22:26",
+    "updatedTimestamp" : "2024-06-14 17:43:07",
+    "lastBuildTimestamp" : "2024-06-14 17:43:07",
     "createdBy" : "admin"
   },
   "persistence" : {
@@ -26,7 +26,7 @@
     "upper" : "DEFAULT"
   },
   "authority" : {
-    "enumClass" : "com.apihug.sample.wire.infra.settings.SampleAuthorityEnum",
+    "enumClass" : "com.apihug.sample.wire.infra.settings.DemoAuthorityEnum",
     "codePrefix" : 10240000
   }
 }

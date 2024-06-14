@@ -1,4 +1,4 @@
-package com.apihug.sample.wire.infra.settings;
+package com.apihug.sample.wire.infra.demo001;
 
 import hope.common.enumeration.Enumeration;
 import hope.common.meta.annotation.Kind;
@@ -18,44 +18,44 @@ import javax.annotation.Generated;
     enumAsRef = true,
     nullable = false,
     allowableValues = {
-        "USER_ADD",
-        "USER_DELETE"
+        "EXAMPLE_ENUM_GOOD",
+        "EXAMPLE_ENUM_BAD"
     },
-    example = "USER_ADD",
-    description = "Example Authority Enum for the project, MODIFY IT"
+    example = "EXAMPLE_ENUM_GOOD",
+    description = "Example Enum"
 )
 @Generated("H.O.P.E. Infra Team")
 @ProtoFrom(
-    value = "com/apihug/sample/proto/infra/settings/authority.proto",
-    entity = "SampleAuthorityEnum",
+    value = "com/apihug/sample/proto/infra/demo001/constant.proto",
+    entity = "Demo001Enum",
     kind = Kind.ENUM
 )
-public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
+public enum Demo001Enum implements Enumeration<Demo001Enum> {
   NA(-1, "Default Placeholder Should NEVER be used", "默认占位枚举请勿使用"),
 
-  USER_ADD(1, "user:add", "Authority to remove user(Remove or modify this template sample)"),
+  EXAMPLE_ENUM_GOOD(1, "GOOD", "you are good man"),
 
-  USER_DELETE(2, "user:remove", "Authority to delete user(Remove or modify this template sample)");
+  EXAMPLE_ENUM_BAD(2, "BAD", "you are bad man");
 
   public static final List<String> VALUES;
 
-  public static final List<SampleAuthorityEnum> ENUMS;
+  public static final List<Demo001Enum> ENUMS;
 
   public static final List<Integer> CODES;
 
-  public static final Map<String, SampleAuthorityEnum> NAME_2_ENUM_MAP;
+  public static final Map<String, Demo001Enum> NAME_2_ENUM_MAP;
 
-  public static final Map<Integer, SampleAuthorityEnum> CODE_2_ENUM_MAP;
+  public static final Map<Integer, Demo001Enum> CODE_2_ENUM_MAP;
 
-  public static final Enumeration.EnumerationsHelper<SampleAuthorityEnum> HELPER;
+  public static final Enumeration.EnumerationsHelper<Demo001Enum> HELPER;
 
   static {
     List<String> _VALUES = new ArrayList<>();
-    List<SampleAuthorityEnum> _ENUMS = new ArrayList<>();
+    List<Demo001Enum> _ENUMS = new ArrayList<>();
     List<Integer> _CODES = new ArrayList<>();
-    Map<String, SampleAuthorityEnum> _NAME_2_ENUM_MAP = new LinkedHashMap<>();
-    Map<Integer, SampleAuthorityEnum> _CODE_2_ENUM_MAP = new LinkedHashMap<>();
-    for (SampleAuthorityEnum each : SampleAuthorityEnum.values()) {
+    Map<String, Demo001Enum> _NAME_2_ENUM_MAP = new LinkedHashMap<>();
+    Map<Integer, Demo001Enum> _CODE_2_ENUM_MAP = new LinkedHashMap<>();
+    for (Demo001Enum each : Demo001Enum.values()) {
     	_VALUES.add(each.title());
     	_ENUMS.add(each);
     	_CODES.add(each.code());
@@ -68,15 +68,15 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
     NAME_2_ENUM_MAP = Collections.unmodifiableMap(_NAME_2_ENUM_MAP);
     CODE_2_ENUM_MAP = Collections.unmodifiableMap(_CODE_2_ENUM_MAP);
     HELPER =
-    new EnumerationsHelper<SampleAuthorityEnum>() {
+    new EnumerationsHelper<Demo001Enum>() {
 
     @Override
-    public SampleAuthorityEnum mapFromCode(int code) {
+    public Demo001Enum mapFromCode(int code) {
     	return CODE_2_ENUM_MAP.getOrDefault(code, NA);
     }
 
     @Override
-    public SampleAuthorityEnum mapFromName(String name) {
+    public Demo001Enum mapFromName(String name) {
     if (name == null || name.isEmpty()) {
     	return NA;
     }
@@ -84,8 +84,8 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
     }
 
     @Override
-    public Class<SampleAuthorityEnum> supportClz() {
-    	return SampleAuthorityEnum.class;
+    public Class<Demo001Enum> supportClz() {
+    	return Demo001Enum.class;
     }
 
     @Override
@@ -94,7 +94,7 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
     }
 
     @Override
-    public List<SampleAuthorityEnum> supportEnumerations() {
+    public List<Demo001Enum> supportEnumerations() {
     return ENUMS;
     }
 
@@ -114,14 +114,14 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
 
   public final boolean deprecated;
 
-  SampleAuthorityEnum(int code, String description, String description2, boolean deprecated) {
+  Demo001Enum(int code, String description, String description2, boolean deprecated) {
     this.code = code;
     this.description = description;
     this.description2 = description2;
     this.deprecated = deprecated;
   }
 
-  SampleAuthorityEnum(int code, String description, String description2) {
+  Demo001Enum(int code, String description, String description2) {
     this(code, description, description2, false);
   }
 
@@ -151,7 +151,7 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
   }
 
   @Override
-  public List<SampleAuthorityEnum> supportEnumerations() {
+  public List<Demo001Enum> supportEnumerations() {
     return ENUMS;
   }
 
@@ -166,7 +166,7 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
   }
 
   @Override
-  public SampleAuthorityEnum mapFromCode(int code) {
+  public Demo001Enum mapFromCode(int code) {
     if (this.code == code) {
       return this;
     }
@@ -175,7 +175,7 @@ public enum SampleAuthorityEnum implements Enumeration<SampleAuthorityEnum> {
   }
 
   @Override
-  public SampleAuthorityEnum mapFromName(String name) {
+  public Demo001Enum mapFromName(String name) {
     if (name == null || name.isEmpty()) {
       return NA;
     }

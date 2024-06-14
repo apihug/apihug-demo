@@ -36,7 +36,7 @@ public class SampleApiModule implements Module<SampleApiCollector> {
     status.setCreatedBy("admin");
     ProjectAuthority authority = new ProjectAuthority();
     project.setAuthority(authority);
-    authority.setEnumClass("com.apihug.sample.wire.infra.settings.SampleAuthorityEnum");
+    authority.setEnumClass("com.apihug.sample.wire.infra.settings.DemoAuthorityEnum");
     authority.setCodePrefix(10240000L);
     ProjectPersistence persistence = new ProjectPersistence();
     project.setPersistence(persistence);
