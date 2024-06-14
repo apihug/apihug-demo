@@ -1,0 +1,75 @@
+plugins {
+    id "java"
+
+    alias(libs.plugins.springBoot)
+    alias(libs.plugins.springDependency)
+    alias(libs.plugins.hopeStub)
+    alias(libs.plugins.liquibase)
+
+}
+
+//0. Java
+apply from: "${rootProject.projectDir}/gradle/java.gradle"
+//1. DB Migration
+apply from: "${rootProject.projectDir}/gradle/liquibase.gradle"
+
+hopeStub {
+
+    // please refer to the doc for details usage:
+    // https://github.com/apihug/apihug.com/blob/master/docs/handbook/005_dsl_implement_stub.md#gradle
+
+    debug = false
+}
+
+description("Demo project for apihug")
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+dependencies {
+
+    //Hope START
+    implementation project(':apihug-demo-proto')
+    implementation(libs.apihugCommonProto)
+    implementation(libs.swaggerV3Core)
+    //Others:
+    
+    implementation(libs.apihugSpringCache)
+    implementation(libs.ehcache)
+    implementation(libs.apihugSpringData)
+    implementation(libs.jakartaPersistence)
+
+    //Hope END
+
+    //Spring starter START
+    
+    implementation(libs.springBootStarterActuator)
+    implementation(libs.springBootStarterCache)
+    implementation(libs.springBootStarterJdbc)
+    implementation(libs.springBootStarterValidation)
+    implementation(libs.springBootStarterWeb)
+    developmentOnly(libs.springBootDevtools)
+    runtimeOnly(libs.h2)
+    runtimeOnly(libs.mysqlConnectorJ)
+    annotationProcessor(libs.springBootConfigurationProcessor)
+    testImplementation(libs.springBootStarterTest)
+    testRuntimeOnly(libs.junitPlatformLauncher)
+    //Spring starter END
+
+    //Extra Test Helper Libs
+    testImplementation(libs.awaitility)
+    testImplementation(libs.archunitApi)
+    testRuntimeOnly(libs.archunitEngine)
+    testRuntimeOnly(libs.assertjCore)
+
+}
+
+
+
+
+tasks.named('test') {
+    useJUnitPlatform()
+}

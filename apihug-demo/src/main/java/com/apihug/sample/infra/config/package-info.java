@@ -1,0 +1,1 @@
+package com.apihug.sample.infra.config;

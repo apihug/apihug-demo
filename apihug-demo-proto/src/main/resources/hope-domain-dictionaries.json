@@ -1,0 +1,25 @@
+{
+  "domain" : "sample",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-06-14 16:22:26",
+  "dictionaries" : [ {
+    "name" : "TemplateExampleEnum",
+    "javaClass" : "com.apihug.sample.wire.infra.settings.example.TemplateExampleEnum",
+    "description" : "Remember to remove this enum this is example from template",
+    "deprecated" : false,
+    "domain" : "sample",
+    "items" : [ {
+      "code" : 1,
+      "title" : "REMOVE_ME",
+      "description" : "remove me",
+      "description2" : "Please remove this example",
+      "deprecated" : false
+    }, {
+      "code" : 2,
+      "title" : "RIGHT_NOW",
+      "description" : "right now",
+      "description2" : "Remove it right now",
+      "deprecated" : false
+    } ]
+  } ]
+}

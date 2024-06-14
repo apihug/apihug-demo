@@ -1,0 +1,31 @@
+{
+  "domain" : "sample",
+  "version" : "0.1.1-SNAPSHOT",
+  "lastBuildTime" : "2024-06-14 16:22:26",
+  "errors" : [ {
+    "name" : "TemplateExampleErrorsEnum",
+    "javaClass" : "com.apihug.sample.wire.infra.settings.example.TemplateExampleErrorsEnum",
+    "description" : "Example to define error enum from template",
+    "deprecated" : false,
+    "domain" : "sample",
+    "items" : [ {
+      "code" : 1024,
+      "title" : "THIS_IS_WRONG",
+      "description" : "this is wrong example",
+      "description2" : "示范错误",
+      "deprecated" : false,
+      "tips" : "This always happen when you not remove this template sample",
+      "phase" : "DOMAIN",
+      "severity" : "FATAL"
+    }, {
+      "code" : 1025,
+      "title" : "THIS_IS_BAD",
+      "description" : "this is bad",
+      "description2" : "还没有移除呢",
+      "deprecated" : false,
+      "tips" : "If you see this, meaning you copy the template code here",
+      "phase" : "CONTROLLER",
+      "severity" : "WARN"
+    } ]
+  } ]
+}

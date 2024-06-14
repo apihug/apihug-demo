@@ -1,0 +1,32 @@
+{
+  "artifact" : {
+    "groupId" : "com.apihug",
+    "artifactId" : "apihug-demo-proto",
+    "version" : "0.1.1-SNAPSHOT"
+  },
+  "name" : "apihug-demo-proto",
+  "description" : "API definition of Demo project for apihug",
+  "application" : "apihug-demo",
+  "packageName" : "com.apihug.sample",
+  "type" : "PROTO",
+  "domain" : "sample",
+  "identifier" : "apihug-demo-proto",
+  "module" : "apihug-demo-proto",
+  "status" : {
+    "deprecated" : false,
+    "createdTimestamp" : "2024-06-14",
+    "updatedTimestamp" : "2024-06-14 16:22:26",
+    "lastBuildTimestamp" : "2024-06-14 16:22:26",
+    "createdBy" : "admin"
+  },
+  "persistence" : {
+    "identifyType" : "LONG",
+    "tenantType" : "LONG",
+    "format" : "DEFAULT",
+    "upper" : "DEFAULT"
+  },
+  "authority" : {
+    "enumClass" : "com.apihug.sample.wire.infra.settings.SampleAuthorityEnum",
+    "codePrefix" : 10240000
+  }
+}

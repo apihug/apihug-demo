@@ -1,0 +1,17 @@
+{
+  "packageName": "com.apihug.sample",
+  "name": "apihug-demo",
+  "domain": "sample",
+  "proto": {
+    "artifact": {
+      "groupId": "com.apihug",
+      "artifactId": "apihug-demo-proto",
+      "version": "0.1.1-SNAPSHOT"
+    },
+    "module": "apihug-demo-proto",
+    "domain": "sample",
+    "applied": true
+  },
+  "dependencies": [
+  ]
+}

@@ -1,0 +1,318 @@
+[versions]
+# libraries
+apihug = "0.9.9-RELEASE"
+
+# Carry from apihug lib env - high risky
+javaxCache = "1.1.1"
+javaxAnnotation = "1.3.2"
+javaxServlet = "4.0.1"
+jakartaValidation = "3.0.2"
+jakartaPersistence = "3.1.0"
+
+# test
+archUnit = "1.1.0"
+assertj = "3.24.2"
+awaitility = "4.2.0"
+mockito = "5.3.1"
+hamcrest = "2.2"
+jacksonVersion = "2.15.2"
+
+# plugins
+springBoot = "3.3.0"
+springDependency = "1.1.5"
+#Protobuf Plugin Version
+protobuf = "0.8.19"
+liquibasePluginVersion = "2.2.0"
+gitProperties = "2.4.0"
+spotless = "6.12.0"
+spotbugs = "5.0.13"
+sonarqube = "3.0"
+
+[libraries]
+
+#Apihug Common
+apihugBom = { group = "com.apihug", name = "it-bom", version.ref = "apihug" }
+apihugCommon = { group = "com.apihug", name = "it-common" }
+apihugCommonApi = { group = "com.apihug", name = "it-common-api" }
+apihugCommonMock = { group = "com.apihug", name = "it-common-mock" }
+apihugCommonProto = { group = "com.apihug", name = "it-common-proto" }
+
+#ApiHug Spring plus
+apihugSpring = { group = "com.apihug", name = "it-common-spring" }
+apihugSpringCore = { group = "com.apihug", name = "it-common-spring-core" }
+apihugSpringApi = { group = "com.apihug", name = "it-common-spring-api" }
+apihugSpringCache = { group = "com.apihug", name = "it-common-spring-cache" }
+apihugSpringData = { group = "com.apihug", name = "it-common-spring-data" }
+apihugSpringMock = { group = "com.apihug", name = "it-common-spring-mock" }
+apihugSpringSecurity = { group = "com.apihug", name = "it-common-spring-security" }
+
+#Cache Stuff
+caffeine = { group = "com.github.ben-manes.caffeine", name = "caffeine" }
+redisson = { group = "org.redisson", name = "redisson" }
+redissonSpringData = { group = "org.redisson", name = "redisson-spring-data-30" }
+ehcache = { group = "org.ehcache", name = "ehcache" }
+
+#Swagger
+swaggerModel = { group = "io.swagger", name = "swagger-models" }
+swaggerV3Model = { group = "io.swagger.core.v3", name = "swagger-models" }
+swaggerV3Core = { group = "io.swagger.core.v3", name = "swagger-core" }
+swaggerV3Annotations = { group = "io.swagger.core.v3", name = "swagger-annotations" }
+swaggerV3AnnotationJakartas = { group = "io.swagger.core.v3", name = "swagger-annotations-jakarta" }
+
+#Standard
+jakartaPersistence = { group = "jakarta.persistence", name = "jakarta.persistence-api" }
+jakartaValidation = { group = "jakarta.validation", name = "jakarta.validation-api" }
+javaxCache = { group = "javax.cache", name = "cache-api" }
+javaxAnnotation = { group = "javax.annotation", name = "javax.annotation-api" }
+javaxServlet = { group = "javax.servlet", name = "javax.servlet-api" }
+
+#Indivudal Standard
+jakartaPersistence2 = { group = "jakarta.persistence", name = "jakarta.persistence-api", version.ref = "jakartaPersistence" }
+jakartaValidation2 = { group = "jakarta.validation", name = "jakarta.validation-api", version.ref = "jakartaValidation" }
+javaxCache2 = { group = "javax.cache", name = "cache-api", version.ref = "javaxCache" }
+javaxAnnotation2 = { group = "javax.annotation", name = "javax.annotation-api", version.ref = "javaxAnnotation" }
+javaxServlet2 = { group = "javax.servlet", name = "javax.servlet-api", version.ref = "javaxServlet" }
+
+#Others
+commonLang3 = { group = "org.apache.commons", name = "commons-lang3" }
+
+# Json
+jacksonDatabind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jacksonVersion" }
+jacksonAnnotations = { group = "com.fasterxml.jackson.core", name = "jackson-annotations", version.ref = "jacksonVersion" }
+jacksonCore = { group = "com.fasterxml.jackson.core", name = "jackson-core", version.ref = "jacksonVersion" }
+jacksonDataTypeJSR310 = { group = "com.fasterxml.jackson.datatype", name = "jackson-datatype-jsr310", version.ref = "jacksonVersion" }
+jacksonDataFormatXml = { group = "com.fasterxml.jackson.dataformat", name = "jackson-dataformat-xml", version.ref = "jacksonVersion" }
+
+#JWT
+jjwtApi = { group = "io.jsonwebtoken", name = "jjwt-api" }
+jjwtImpl = { group = "io.jsonwebtoken", name = "jjwt-impl" }
+jjwtJackson = { group = "io.jsonwebtoken", name = "jjwt-jackson" }
+
+#OK
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp" }
+okhttpLoggingInterceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor" }
+
+#test
+awaitility = { group = "org.awaitility", name = "awaitility", version.ref = "awaitility" }
+assertjCore = { group = "org.assertj", name = "assertj-core", version.ref = "assertj" }
+archunitApi = { group = "com.tngtech.archunit", name = "archunit-junit5-api", version.ref = "archUnit" }
+archunitEngine = { group = "com.tngtech.archunit", name = "archunit-junit5-engine", version.ref = "archUnit" }
+mockitoCore = { group = "org.mockito", name = "mockito-core", version.ref = "mockito" }
+hamcrest = { group = "org.hamcrest", name = "hamcrest", version.ref = "hamcrest" }
+
+
+#Spring's
+
+springBootStarterActivemq = { group = "org.springframework.boot", name = "spring-boot-starter-activemq" }
+springBootStarterActuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
+springBootStarterAmqp = { group = "org.springframework.boot", name = "spring-boot-starter-amqp" }
+springBootStarterArtemis = { group = "org.springframework.boot", name = "spring-boot-starter-artemis" }
+springBootStarterBatch = { group = "org.springframework.boot", name = "spring-boot-starter-batch" }
+springBootStarterCache = { group = "org.springframework.boot", name = "spring-boot-starter-cache" }
+springBootStarterDataCassandra = { group = "org.springframework.boot", name = "spring-boot-starter-data-cassandra" }
+springBootStarterDataCassandraReactive = { group = "org.springframework.boot", name = "spring-boot-starter-data-cassandra-reactive" }
+springBootStarterDataCouchbase = { group = "org.springframework.boot", name = "spring-boot-starter-data-couchbase" }
+springBootStarterDataCouchbaseReactive = { group = "org.springframework.boot", name = "spring-boot-starter-data-couchbase-reactive" }
+springBootStarterDataElasticsearch = { group = "org.springframework.boot", name = "spring-boot-starter-data-elasticsearch" }
+springBootStarterDataJdbc = { group = "org.springframework.boot", name = "spring-boot-starter-data-jdbc" }
+springBootStarterDataJpa = { group = "org.springframework.boot", name = "spring-boot-starter-data-jpa" }
+springBootStarterDataLdap = { group = "org.springframework.boot", name = "spring-boot-starter-data-ldap" }
+springBootStarterDataMongodb = { group = "org.springframework.boot", name = "spring-boot-starter-data-mongodb" }
+springBootStarterDataMongodbReactive = { group = "org.springframework.boot", name = "spring-boot-starter-data-mongodb-reactive" }
+springBootStarterDataNeo4j = { group = "org.springframework.boot", name = "spring-boot-starter-data-neo4j" }
+springBootStarterDataR2dbc = { group = "org.springframework.boot", name = "spring-boot-starter-data-r2dbc" }
+springBootStarterDataRedis = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis" }
+springBootStarterDataRedisReactive = { group = "org.springframework.boot", name = "spring-boot-starter-data-redis-reactive" }
+springBootStarterDataRest = { group = "org.springframework.boot", name = "spring-boot-starter-data-rest" }
+springBootStarterFreemarker = { group = "org.springframework.boot", name = "spring-boot-starter-freemarker" }
+springBootStarterGraphql = { group = "org.springframework.boot", name = "spring-boot-starter-graphql" }
+springBootStarterGroovyTemplates = { group = "org.springframework.boot", name = "spring-boot-starter-groovy-templates" }
+springBootStarterHateoas = { group = "org.springframework.boot", name = "spring-boot-starter-hateoas" }
+springBootStarterIntegration = { group = "org.springframework.boot", name = "spring-boot-starter-integration" }
+springBootStarterJdbc = { group = "org.springframework.boot", name = "spring-boot-starter-jdbc" }
+springBootStarterJersey = { group = "org.springframework.boot", name = "spring-boot-starter-jersey" }
+springBootStarterJooq = { group = "org.springframework.boot", name = "spring-boot-starter-jooq" }
+springBootStarterMail = { group = "org.springframework.boot", name = "spring-boot-starter-mail" }
+springBootStarterMustache = { group = "org.springframework.boot", name = "spring-boot-starter-mustache" }
+springBootStarterOauth2AuthorizationServer = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-authorization-server" }
+springBootStarterOauth2Client = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-client" }
+springBootStarterOauth2ResourceServer = { group = "org.springframework.boot", name = "spring-boot-starter-oauth2-resource-server" }
+springBootStarterPulsar = { group = "org.springframework.boot", name = "spring-boot-starter-pulsar" }
+springBootStarterPulsarReactive = { group = "org.springframework.boot", name = "spring-boot-starter-pulsar-reactive" }
+springBootStarterQuartz = { group = "org.springframework.boot", name = "spring-boot-starter-quartz" }
+springBootStarterRsocket = { group = "org.springframework.boot", name = "spring-boot-starter-rsocket" }
+springBootStarterSecurity = { group = "org.springframework.boot", name = "spring-boot-starter-security" }
+springBootStarterThymeleaf = { group = "org.springframework.boot", name = "spring-boot-starter-thymeleaf" }
+springBootStarterValidation = { group = "org.springframework.boot", name = "spring-boot-starter-validation" }
+springBootStarterWeb = { group = "org.springframework.boot", name = "spring-boot-starter-web" }
+springBootStarterWebServices = { group = "org.springframework.boot", name = "spring-boot-starter-web-services" }
+springBootStarterWebflux = { group = "org.springframework.boot", name = "spring-boot-starter-webflux" }
+springBootStarterWebsocket = { group = "org.springframework.boot", name = "spring-boot-starter-websocket" }
+timefoldSolverSpringBootStarter = { group = "ai.timefold.solver", name = "timefold-solver-spring-boot-starter" }
+graphqlDgsSpringGraphqlStarter = { group = "com.netflix.graphql.dgs", name = "graphql-dgs-spring-graphql-starter" }
+vaadinSpringBootStarter = { group = "com.vaadin", name = "vaadin-spring-boot-starter" }
+micrometerRegistryWavefront = { group = "io.micrometer", name = "micrometer-registry-wavefront" }
+micrometerTracingBridgeBrave = { group = "io.micrometer", name = "micrometer-tracing-bridge-brave" }
+zipkinReporterBrave = { group = "io.zipkin.reporter2", name = "zipkin-reporter-brave" }
+kafkaStreams = { group = "org.apache.kafka", name = "kafka-streams" }
+flywayCore = { group = "org.flywaydb", name = "flyway-core" }
+flywayDatabaseDb2 = { group = "org.flywaydb", name = "flyway-database-db2" }
+flywayDatabaseDerby = { group = "org.flywaydb", name = "flyway-database-derby" }
+flywayDatabaseHsqldb = { group = "org.flywaydb", name = "flyway-database-hsqldb" }
+flywayDatabaseOracle = { group = "org.flywaydb", name = "flyway-database-oracle" }
+flywayDatabasePostgresql = { group = "org.flywaydb", name = "flyway-database-postgresql" }
+flywayMysql = { group = "org.flywaydb", name = "flyway-mysql" }
+flywaySqlserver = { group = "org.flywaydb", name = "flyway-sqlserver" }
+liquibaseCore = { group = "org.liquibase", name = "liquibase-core" }
+springAiAzureOpenaiSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-azure-openai-spring-boot-starter" }
+springAiAzureStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-azure-store-spring-boot-starter" }
+springAiBedrockAiSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-bedrock-ai-spring-boot-starter" }
+springAiChromaStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-chroma-store-spring-boot-starter" }
+springAiMilvusStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-milvus-store-spring-boot-starter" }
+springAiMistralAiSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-mistral-ai-spring-boot-starter" }
+springAiNeo4jStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-neo4j-store-spring-boot-starter" }
+springAiOllamaSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-ollama-spring-boot-starter" }
+springAiOpenaiSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-openai-spring-boot-starter" }
+springAiPgvectorStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-pgvector-store-spring-boot-starter" }
+springAiPineconeStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-pinecone-store-spring-boot-starter" }
+springAiPostgresmlSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-postgresml-spring-boot-starter" }
+springAiQdrantStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-qdrant-store-spring-boot-starter" }
+springAiRedisStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-redis-store-spring-boot-starter" }
+springAiStabilityAiSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-stability-ai-spring-boot-starter" }
+springAiTransformersSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-transformers-spring-boot-starter" }
+springAiVertexAiGeminiSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-vertex-ai-gemini-spring-boot-starter" }
+springAiVertexAiPalm2SpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-vertex-ai-palm2-spring-boot-starter" }
+springAiWeaviateStoreSpringBootStarter = { group = "org.springframework.ai", name = "spring-ai-weaviate-store-spring-boot-starter" }
+springRabbitStream = { group = "org.springframework.amqp", name = "spring-rabbit-stream" }
+springCloudBus = { group = "org.springframework.cloud", name = "spring-cloud-bus" }
+springCloudConfigServer = { group = "org.springframework.cloud", name = "spring-cloud-config-server" }
+springCloudFunctionWeb = { group = "org.springframework.cloud", name = "spring-cloud-function-web" }
+springCloudStarter = { group = "org.springframework.cloud", name = "spring-cloud-starter" }
+springCloudStarterCircuitbreakerReactorResilience4j = { group = "org.springframework.cloud", name = "spring-cloud-starter-circuitbreaker-reactor-resilience4j" }
+springCloudStarterConfig = { group = "org.springframework.cloud", name = "spring-cloud-starter-config" }
+springCloudStarterConsulConfig = { group = "org.springframework.cloud", name = "spring-cloud-starter-consul-config" }
+springCloudStarterConsulDiscovery = { group = "org.springframework.cloud", name = "spring-cloud-starter-consul-discovery" }
+springCloudStarterGateway = { group = "org.springframework.cloud", name = "spring-cloud-starter-gateway" }
+springCloudStarterGatewayMvc = { group = "org.springframework.cloud", name = "spring-cloud-starter-gateway-mvc" }
+springCloudStarterLoadbalancer = { group = "org.springframework.cloud", name = "spring-cloud-starter-loadbalancer" }
+springCloudStarterNetflixEurekaClient = { group = "org.springframework.cloud", name = "spring-cloud-starter-netflix-eureka-client" }
+springCloudStarterNetflixEurekaServer = { group = "org.springframework.cloud", name = "spring-cloud-starter-netflix-eureka-server" }
+springCloudStarterOpenfeign = { group = "org.springframework.cloud", name = "spring-cloud-starter-openfeign" }
+springCloudStarterTask = { group = "org.springframework.cloud", name = "spring-cloud-starter-task" }
+springCloudStarterVaultConfig = { group = "org.springframework.cloud", name = "spring-cloud-starter-vault-config" }
+springCloudStarterZookeeperConfig = { group = "org.springframework.cloud", name = "spring-cloud-starter-zookeeper-config" }
+springCloudStarterZookeeperDiscovery = { group = "org.springframework.cloud", name = "spring-cloud-starter-zookeeper-discovery" }
+springCloudStream = { group = "org.springframework.cloud", name = "spring-cloud-stream" }
+springCloudStreamBinderKafka = { group = "org.springframework.cloud", name = "spring-cloud-stream-binder-kafka" }
+springCloudStreamBinderKafkaStreams = { group = "org.springframework.cloud", name = "spring-cloud-stream-binder-kafka-streams" }
+springCloudStreamBinderPulsar = { group = "org.springframework.cloud", name = "spring-cloud-stream-binder-pulsar" }
+springCloudStreamBinderRabbit = { group = "org.springframework.cloud", name = "spring-cloud-stream-binder-rabbit" }
+springDataRestHalExplorer = { group = "org.springframework.data", name = "spring-data-rest-hal-explorer" }
+springIntegrationAmqp = { group = "org.springframework.integration", name = "spring-integration-amqp" }
+springIntegrationHttp = { group = "org.springframework.integration", name = "spring-integration-http" }
+springIntegrationJdbc = { group = "org.springframework.integration", name = "spring-integration-jdbc" }
+springIntegrationJms = { group = "org.springframework.integration", name = "spring-integration-jms" }
+springIntegrationJpa = { group = "org.springframework.integration", name = "spring-integration-jpa" }
+springIntegrationKafka = { group = "org.springframework.integration", name = "spring-integration-kafka" }
+springIntegrationMail = { group = "org.springframework.integration", name = "spring-integration-mail" }
+springIntegrationMongodb = { group = "org.springframework.integration", name = "spring-integration-mongodb" }
+springIntegrationR2dbc = { group = "org.springframework.integration", name = "spring-integration-r2dbc" }
+springIntegrationRedis = { group = "org.springframework.integration", name = "spring-integration-redis" }
+springIntegrationRsocket = { group = "org.springframework.integration", name = "spring-integration-rsocket" }
+springIntegrationSecurity = { group = "org.springframework.integration", name = "spring-integration-security" }
+springIntegrationStomp = { group = "org.springframework.integration", name = "spring-integration-stomp" }
+springIntegrationWebflux = { group = "org.springframework.integration", name = "spring-integration-webflux" }
+springIntegrationWebsocket = { group = "org.springframework.integration", name = "spring-integration-websocket" }
+springIntegrationWs = { group = "org.springframework.integration", name = "spring-integration-ws" }
+springKafka = { group = "org.springframework.kafka", name = "spring-kafka" }
+springModulithStarterCore = { group = "org.springframework.modulith", name = "spring-modulith-starter-core" }
+springModulithStarterJdbc = { group = "org.springframework.modulith", name = "spring-modulith-starter-jdbc" }
+springModulithStarterJpa = { group = "org.springframework.modulith", name = "spring-modulith-starter-jpa" }
+springModulithStarterMongodb = { group = "org.springframework.modulith", name = "spring-modulith-starter-mongodb" }
+springSecurityMessaging = { group = "org.springframework.security", name = "spring-security-messaging" }
+springSecurityRsocket = { group = "org.springframework.security", name = "spring-security-rsocket" }
+springSessionDataRedis = { group = "org.springframework.session", name = "spring-session-data-redis" }
+springSessionJdbc = { group = "org.springframework.session", name = "spring-session-jdbc" }
+springShellStarter = { group = "org.springframework.shell", name = "spring-shell-starter" }
+thymeleafExtrasSpringsecurity6 = { group = "org.thymeleaf.extras", name = "thymeleaf-extras-springsecurity6" }
+springBootDevtools = { group = "org.springframework.boot", name = "spring-boot-devtools" }
+springBootDockerCompose = { group = "org.springframework.boot", name = "spring-boot-docker-compose" }
+h2 = { group = "com.h2database", name = "h2" }
+jcc = { group = "com.ibm.db2", name = "jcc" }
+mssqlJdbc = { group = "com.microsoft.sqlserver", name = "mssql-jdbc" }
+mysqlConnectorJ = { group = "com.mysql", name = "mysql-connector-j" }
+ojdbc11 = { group = "com.oracle.database.jdbc", name = "ojdbc11" }
+oracleR2dbc = { group = "com.oracle.database.r2dbc", name = "oracle-r2dbc" }
+r2dbcMysql = { group = "io.asyncer", name = "r2dbc-mysql" }
+micrometerRegistryDatadog = { group = "io.micrometer", name = "micrometer-registry-datadog" }
+micrometerRegistryDynatrace = { group = "io.micrometer", name = "micrometer-registry-dynatrace" }
+micrometerRegistryGraphite = { group = "io.micrometer", name = "micrometer-registry-graphite" }
+micrometerRegistryInflux = { group = "io.micrometer", name = "micrometer-registry-influx" }
+micrometerRegistryNewRelic = { group = "io.micrometer", name = "micrometer-registry-new-relic" }
+micrometerRegistryPrometheus = { group = "io.micrometer", name = "micrometer-registry-prometheus" }
+micrometerTracingReporterWavefront = { group = "io.micrometer", name = "micrometer-tracing-reporter-wavefront" }
+r2dbcH2 = { group = "io.r2dbc", name = "r2dbc-h2" }
+derby = { group = "org.apache.derby", name = "derby" }
+derbytools = { group = "org.apache.derby", name = "derbytools" }
+hsqldb = { group = "org.hsqldb", name = "hsqldb" }
+mariadbJavaClient = { group = "org.mariadb.jdbc", name = "mariadb-java-client" }
+postgresql = { group = "org.postgresql", name = "postgresql" }
+r2dbcPostgresql = { group = "org.postgresql", name = "r2dbc-postgresql" }
+springModulithActuator = { group = "org.springframework.modulith", name = "spring-modulith-actuator" }
+springModulithObservability = { group = "org.springframework.modulith", name = "spring-modulith-observability" }
+springBootConfigurationProcessor = { group = "org.springframework.boot", name = "spring-boot-configuration-processor" }
+lombok = { group = "org.projectlombok", name = "lombok" }
+springBootStarterTest = { group = "org.springframework.boot", name = "spring-boot-starter-test" }
+springBootTestcontainers = { group = "org.springframework.boot", name = "spring-boot-testcontainers" }
+unboundidLdapsdk = { group = "com.unboundid", name = "unboundid-ldapsdk" }
+reactorTest = { group = "io.projectreactor", name = "reactor-test" }
+springWebTestClient = { group = "io.rest-assured", name = "spring-web-test-client" }
+springRabbitTest = { group = "org.springframework.amqp", name = "spring-rabbit-test" }
+springBatchTest = { group = "org.springframework.batch", name = "spring-batch-test" }
+springCloudStarterContractStubRunner = { group = "org.springframework.cloud", name = "spring-cloud-starter-contract-stub-runner" }
+springCloudStarterContractVerifier = { group = "org.springframework.cloud", name = "spring-cloud-starter-contract-verifier" }
+springCloudStreamTestBinder = { group = "org.springframework.cloud", name = "spring-cloud-stream-test-binder" }
+springGraphqlTest = { group = "org.springframework.graphql", name = "spring-graphql-test" }
+springIntegrationTest = { group = "org.springframework.integration", name = "spring-integration-test" }
+springKafkaTest = { group = "org.springframework.kafka", name = "spring-kafka-test" }
+springModulithStarterTest = { group = "org.springframework.modulith", name = "spring-modulith-starter-test" }
+springRestdocsMockmvc = { group = "org.springframework.restdocs", name = "spring-restdocs-mockmvc" }
+springSecurityTest = { group = "org.springframework.security", name = "spring-security-test" }
+springShellStarterTest = { group = "org.springframework.shell", name = "spring-shell-starter-test" }
+testContainerActivemq = { group = "org.testcontainers", name = "activemq" }
+testContainerCassandra = { group = "org.testcontainers", name = "cassandra" }
+testContainerConsul = { group = "org.testcontainers", name = "consul" }
+testContainerCouchbase = { group = "org.testcontainers", name = "couchbase" }
+testContainerDB2 = { group = "org.testcontainers", name = "db2" }
+testContainerElasticsearch = { group = "org.testcontainers", name = "elasticsearch" }
+testContainerJunitJupiter = { group = "org.testcontainers", name = "junit-jupiter" }
+testContainerKafka = { group = "org.testcontainers", name = "kafka" }
+testContainerMariadb = { group = "org.testcontainers", name = "mariadb" }
+testContainerMongodb = { group = "org.testcontainers", name = "mongodb" }
+testContainerMsSqlServer = { group = "org.testcontainers", name = "mssqlserver" }
+testContainerMysql = { group = "org.testcontainers", name = "mysql" }
+testContainerNeo4j = { group = "org.testcontainers", name = "neo4j" }
+testContainerOracle = { group = "org.testcontainers", name = "oracle-free" }
+testContainerPostgresql = { group = "org.testcontainers", name = "postgresql" }
+testContainerPulsar = { group = "org.testcontainers", name = "pulsar" }
+testContainerR2DBC = { group = "org.testcontainers", name = "r2dbc" }
+testContainerRabbitmq = { group = "org.testcontainers", name = "rabbitmq" }
+testContainerVault = { group = "org.testcontainers", name = "vault" }
+junitPlatformLauncher = { group = "org.junit.platform", name = "junit-platform-launcher" }
+
+[plugins]
+#Spring plugin
+springBoot = { id = "org.springframework.boot", version.ref = "springBoot" }
+springDependency = { id = "io.spring.dependency-management", version.ref = "springDependency" }
+#Hug plugin
+hopeWire = { id = "com.apihug.wire", version.ref = "apihug" }
+hopeStub = { id = "com.apihug.stub", version.ref = "apihug" }
+#Protobuf plugin
+protobuf = { id = "com.google.protobuf", version.ref = "protobuf" }
+#Liquibase
+liquibase = { id = "org.liquibase.gradle", version.ref = "liquibasePluginVersion" }
+#Others
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+spotbugs = { id = "com.github.spotbugs", version.ref = "spotbugs" }
+gitProperties = { id = "com.gorylenko.gradle-git-properties", version.ref = "gitProperties" }
+sonarqube = { id = "org.sonarqube", version.ref = "sonarqube" }
