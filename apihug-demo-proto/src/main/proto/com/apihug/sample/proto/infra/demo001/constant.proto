@@ -8,6 +8,16 @@ import "extend/domain.proto";
 
 option (hope.domain.kind) = ENUM;
 
+enum  VIPLevelEnum {
+
+  option (hope.swagger.enm) = {
+    description: "VIP Level enum for customer"
+  };
+
+  GOLD = 0 [(hope.constant.field) = {code: 1,message: "Top Level VIP", message2: "尊贵客户"}];
+}
+
+
 enum  Demo001Enum {
 
   option (hope.swagger.enm) = {

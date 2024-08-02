@@ -1,9 +1,11 @@
 package com.apihug.sample.wire.api;
 
 import com.apihug.sample.wire.infra.demo001.Demo001Enum;
+import com.apihug.sample.wire.infra.demo001.VIPLevelEnum;
 import com.apihug.sample.wire.infra.settings.DemoAuthorityEnum;
 import hope.common.Builder;
 import hope.common.service.Collector;
+import hope.common.service.api.Authorization;
 import hope.common.service.api.Component;
 import hope.common.service.api.ComponentItem;
 import hope.common.service.api.Validation;
@@ -234,6 +236,59 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
     // ----------------------------------------------------
   }
 
+  private final void _build_service_com_apihug_sample_wire_api_demo001_VIPService() {
+    // ----------------------------------------------------
+    // START-[Service Context] com.apihug.sample.wire.api.demo001.VIPService
+    Map sc = servicesContext.computeIfAbsent("com.apihug.sample.wire.api.demo001.VIPService", s-> new LinkedHashMap());
+    sc.put("description", "Service for VIP");
+    sc.put("protoFrom", "com/apihug/sample/proto/api/demo001/api.proto");
+    sc.put("protoEntity", "VIPService");
+    sc.put("basePath", "/vip");
+    List<String> sc_paths = new ArrayList();
+    sc.put("paths", sc_paths);
+    // --------------------------
+    // Register Path of this Service: [1] "/vip/get-sth"
+    sc_paths.add("/vip/get-sth");
+    Map _sc_paths_item_1 = pathsContext.computeIfAbsent("/vip/get-sth", s-> new LinkedHashMap());
+    _sc_paths_item_1.put("action", "GET");
+    _sc_paths_item_1.put("method", "GetMeSth");
+    _sc_paths_item_1.put("wrapper", true);
+    _sc_paths_item_1.put("pageable", false);
+    _sc_paths_item_1.put("request", false);
+    _sc_paths_item_1.put("response", false);
+    _sc_paths_item_1.put("session", false);
+    _sc_paths_item_1.put("inputPlural", false);
+    _sc_paths_item_1.put("outputPlural", false);
+    _sc_paths_item_1.put("priority", "MIDDLE");
+    _sc_paths_item_1.put("requestRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_1.put("responseRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_1.put("operation", new Builder<Operation>() {
+      @Override
+      public Operation build() {
+        final Operation operation =  new Operation();
+        List<String> _tags = new ArrayList();
+        _tags.add("user");
+        operation.setTags(_tags);
+        operation.setDescription("Get me something");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_1.put("authorization", new Builder<Authorization>() {
+      @Override
+      public Authorization build() {
+        Authorization res = new Authorization();
+        res.setRoles(Set.of("ADMIN"));
+        res.addAuthority(DemoAuthorityEnum.USER_DELETE);
+        res.setCombinator(Authorization.Combinator.AND);
+        return res;
+      }
+    }.build());
+    _sc_paths_item_1.put("group", "CUSTOMER");
+    _sc_paths_item_1.put("empty", false);
+    // END-[Service Context] com.apihug.sample.wire.api.demo001.VIPService
+    // ----------------------------------------------------
+  }
+
   private final void _build_component_com_apihug_sample_wire_api_demo001_values_ExampleRequest() {
     //  Build of the component: ExampleRequest proto: com/apihug/sample/proto/api/demo001/values/request.proto
     Component<Schema, Schema> res = new Component();
@@ -288,6 +343,50 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
     res.addItem(_0);
   }
 
+  private final void _build_component_com_apihug_sample_wire_api_demo001_values_SampleRequest() {
+    //  Build of the component: SampleRequest proto: com/apihug/sample/proto/api/demo001/values/request.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.sample.wire.api.demo001.values.SampleRequest", res);
+    res.setClzName("com.apihug.sample.wire.api.demo001.values.SampleRequest");
+    res.setName("SampleRequest");
+    res.setProtoFrom("com/apihug/sample/proto/api/demo001/values/request.proto");
+    res.setProtoEntity("SampleRequest");
+    res.setDescription("A sample plain object definition");
+    res.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("A sample plain object definition");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    // Add field 0 aga
+    ComponentItem<Schema> _0 = new ComponentItem();
+    _0.setClz("java.lang.Long");
+    _0.setName("aga");
+    _0.setFieldName("aga");
+    _0.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("age of human");
+        res.setSpecVersion(SpecVersion.V30);
+        res.setNullable(false);
+        res.setExample("Example of this field");
+        return res;
+      }
+    }.build());
+    _0.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    res.addItem(_0);
+  }
+
   private final void _build_component_com_apihug_sample_wire_infra_demo001_Demo001Enum() {
     //  Build of the component: Demo001Enum proto: com/apihug/sample/proto/infra/demo001/constant.proto
     Component<Schema, Schema> res = new Component();
@@ -304,6 +403,27 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
         values.add(Demo001Enum.EXAMPLE_ENUM_GOOD);
         values.add(Demo001Enum.EXAMPLE_ENUM_BAD);
         res.setDefault(Demo001Enum.EXAMPLE_ENUM_GOOD);
+        res.setEnum(values);
+        return res;
+      }
+    }.build());
+  }
+
+  private final void _build_component_com_apihug_sample_wire_infra_demo001_VIPLevelEnum() {
+    //  Build of the component: VIPLevelEnum proto: com/apihug/sample/proto/infra/demo001/constant.proto
+    Component<Schema, Schema> res = new Component();
+    componentMap.put("com.apihug.sample.wire.infra.demo001.VIPLevelEnum", res);
+    res.setClzName("com.apihug.sample.wire.infra.demo001.VIPLevelEnum");
+    res.setEnumClz(true);
+    res.setName("VIPLevelEnum");
+    res.setPayload(new Builder<Schema<VIPLevelEnum>>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("VIP Level enum for customer");
+        List<VIPLevelEnum> values  = new ArrayList();
+        values.add(VIPLevelEnum.GOLD);
+        res.setDefault(VIPLevelEnum.GOLD);
         res.setEnum(values);
         return res;
       }
@@ -380,10 +500,16 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
   private void _init() {
     // Build For Service com.apihug.sample.wire.api.demo001.Demo001Service
     _build_service_com_apihug_sample_wire_api_demo001_Demo001Service();
+    // Build For Service com.apihug.sample.wire.api.demo001.VIPService
+    _build_service_com_apihug_sample_wire_api_demo001_VIPService();
     // Build for Component : com.apihug.sample.wire.api.demo001.values.ExampleRequest
     _build_component_com_apihug_sample_wire_api_demo001_values_ExampleRequest();
+    // Build for Component : com.apihug.sample.wire.api.demo001.values.SampleRequest
+    _build_component_com_apihug_sample_wire_api_demo001_values_SampleRequest();
     // Build for Enum :com.apihug.sample.wire.infra.demo001.Demo001Enum
     _build_component_com_apihug_sample_wire_infra_demo001_Demo001Enum();
+    // Build for Enum :com.apihug.sample.wire.infra.demo001.VIPLevelEnum
+    _build_component_com_apihug_sample_wire_infra_demo001_VIPLevelEnum();
     // Build for Enum :com.apihug.sample.wire.infra.settings.DemoAuthorityEnum
     _build_component_com_apihug_sample_wire_infra_settings_DemoAuthorityEnum();
     // Build OpenAPI information

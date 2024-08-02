@@ -19,7 +19,8 @@ hopeWire {
     //  https://github.com/apihug/apihug.com/blob/master/docs/handbook/004_dsl_implement_wire.md#command
 
     keepProto = false
-    verbose = false
+    verbose = true
+    kola = true
 }
 
 hopeServer {

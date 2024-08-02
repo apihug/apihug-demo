@@ -1,7 +1,7 @@
 {
   "domain" : "sample",
   "version" : "0.1.1-SNAPSHOT",
-  "lastBuildTime" : "2024-06-14 17:43:07",
+  "lastBuildTime" : "2024-08-02 17:13:24",
   "dictionaries" : [ {
     "name" : "Demo001Enum",
     "javaClass" : "com.apihug.sample.wire.infra.demo001.Demo001Enum",
@@ -19,6 +19,19 @@
       "title" : "EXAMPLE_ENUM_BAD",
       "description" : "BAD",
       "description2" : "you are bad man",
+      "deprecated" : false
+    } ]
+  }, {
+    "name" : "VIPLevelEnum",
+    "javaClass" : "com.apihug.sample.wire.infra.demo001.VIPLevelEnum",
+    "description" : "VIP Level enum for customer",
+    "deprecated" : false,
+    "domain" : "sample",
+    "items" : [ {
+      "code" : 1,
+      "title" : "GOLD",
+      "description" : "Top Level VIP",
+      "description2" : "尊贵客户",
       "deprecated" : false
     } ]
   } ]

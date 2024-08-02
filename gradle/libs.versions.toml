@@ -1,6 +1,6 @@
 [versions]
 # libraries
-apihug = "0.9.9-RELEASE"
+apihug = "1.0.0-RELEASE"
 
 # Carry from apihug lib env - high risky
 javaxCache = "1.1.1"
@@ -102,7 +102,7 @@ hamcrest = { group = "org.hamcrest", name = "hamcrest", version.ref = "hamcrest"
 
 
 #Spring's
-
+springBootDependencies = { group = "org.springframework.boot", name = "spring-boot-dependencies", version.ref = "springBoot" }
 springBootStarterActivemq = { group = "org.springframework.boot", name = "spring-boot-starter-activemq" }
 springBootStarterActuator = { group = "org.springframework.boot", name = "spring-boot-starter-actuator" }
 springBootStarterAmqp = { group = "org.springframework.boot", name = "spring-boot-starter-amqp" }

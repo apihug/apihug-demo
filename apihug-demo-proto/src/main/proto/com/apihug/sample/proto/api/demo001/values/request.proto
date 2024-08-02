@@ -7,6 +7,20 @@ import "swagger/annotations.proto";
 
 option (hope.domain.kind) = BEAN;
 
+message SampleRequest {
+    option (hope.swagger.schema) = {
+        json_schema: {
+            description: "A sample plain object definition";
+        };
+    };
+    uint64 aga = 1 [(hope.swagger.field) = {
+        description: "age of human";
+        example: "Example of this field";
+        empty: FALSE;
+    }];
+
+}
+
 
 message ExampleRequest {
     option (hope.swagger.schema) = {

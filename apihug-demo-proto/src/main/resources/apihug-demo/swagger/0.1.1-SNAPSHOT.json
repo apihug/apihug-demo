@@ -75,6 +75,68 @@
           "group" : "CUSTOMER"
         }
       }
+    },
+    "/vip/get-sth" : {
+      "get" : {
+        "tags" : [ "user" ],
+        "summary" : "",
+        "description" : "Get me something",
+        "operationId" : "VIPService#GetMeSth",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "Get me something",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/sample/proto/api/demo001/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.sample.wire.api.demo001.VIPService",
+          "priority" : "MIDDLE",
+          "group" : "CUSTOMER",
+          "security" : {
+            "roles" : [ "ADMIN" ],
+            "authorities" : [ "USER_DELETE" ],
+            "combinator" : "AND"
+          }
+        }
+      }
     }
   },
   "components" : {
@@ -294,6 +356,41 @@
         "title" : "ProblemSeverity",
         "x-hope-java-class" : "hope.common.wire.constant.ProblemSeverity",
         "x-hope-enum-type" : "true"
+      },
+      "SampleRequest" : {
+        "type" : "object",
+        "description" : "A sample plain object definition",
+        "properties" : {
+          "aga" : {
+            "type" : "number",
+            "format" : "int64",
+            "description" : "age of human",
+            "example" : "Example of this field"
+          }
+        },
+        "required" : [ "aga" ],
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.sample.wire.api.demo001.values.SampleRequest",
+          "protoFrom" : "com/apihug/sample/proto/api/demo001/values/request.proto"
+        }
+      },
+      "VIPLevelEnum" : {
+        "default" : "GOLD",
+        "description" : "VIP Level enum for customer",
+        "oneOf" : [ {
+          "const" : "GOLD",
+          "description" : "Top Level VIP",
+          "example" : "GOLD",
+          "title" : "GOLD",
+          "x-hope-enum-item-code" : 1,
+          "x-hope-enum-item-desc2" : "尊贵客户"
+        } ],
+        "title" : "VIPLevelEnum",
+        "x-hope-rt-meta" : {
+          "clz" : "com.apihug.sample.wire.infra.demo001.VIPLevelEnum",
+          "protoFrom" : "com/apihug/sample/proto/infra/demo001/constant.proto"
+        },
+        "x-hope-enum-type" : "true"
       }
     },
     "responses" : { },
@@ -358,7 +455,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-06-14",
-      "updatedTimestamp" : "2024-06-14 17:43:07",
+      "updatedTimestamp" : "2024-08-02 17:13:24",
       "createdBy" : "admin"
     },
     "persistence" : {
