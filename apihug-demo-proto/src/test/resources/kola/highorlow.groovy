@@ -11,6 +11,7 @@ Feature.make {
             get("https://www.gongkongmall.com/")
         }
         Then {
+            status(200)
             isOk()
         }
         postScript {

@@ -1,5 +1,6 @@
 package com.apihug.sample.wire.api.demo001.values;
 
+import com.apihug.sample.vo.SuperParentClass;
 import hope.common.meta.annotation.Kind;
 import hope.common.meta.annotation.ProtoFrom;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -19,7 +20,7 @@ import javax.annotation.Generated;
     entity = "ExampleRequest",
     kind = Kind.MESSAGE
 )
-public class ExampleRequest {
+public class ExampleRequest extends SuperParentClass {
   private static final long serialVersionUID = 0L;
 
   @NotEmpty

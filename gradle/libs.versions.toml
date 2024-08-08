@@ -1,6 +1,6 @@
 [versions]
 # libraries
-apihug = "1.0.3-RELEASE"
+apihug = "1.0.4-RELEASE"
 
 # Carry from apihug lib env - high risky
 javaxCache = "1.1.1"

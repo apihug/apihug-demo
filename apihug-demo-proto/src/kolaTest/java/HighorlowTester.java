@@ -51,8 +51,7 @@ public class HighorlowTester implements T {
     }
     final Response response = RestAssured.given().spec(request).get(path);
     // Response verification
-    // Expect response success
-    Assertions.assertThat(response.statusCode()).isGreaterThanOrEqualTo(200).isLessThan(300);
+    // Assertions.assertThat(response.statusCode()).isEqualTo(200)
     // Post script
     System.out.println("Who are you?");
   }
