@@ -134,7 +134,75 @@
             "roles" : [ "ADMIN" ],
             "authorities" : [ "USER_DELETE" ],
             "combinator" : "AND"
+          },
+          "questions" : [ "how to do something", "I want to buy a apple", "Jake want to eat something spicy" ]
+        }
+      }
+    },
+    "/vip/post-test" : {
+      "post" : {
+        "tags" : [ ],
+        "summary" : "",
+        "description" : "test post example",
+        "operationId" : "VIPService#GiveMePost",
+        "parameters" : [ ],
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "type" : "object",
+                "$ref" : "#/components/schemas/ExampleRequest"
+              }
+            }
           }
+        },
+        "responses" : {
+          "200" : {
+            "description" : "test post example",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "type" : "object",
+                  "properties" : {
+                    "code" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "返回码,零成功,非零失败"
+                    },
+                    "message" : {
+                      "type" : "string",
+                      "description" : "返回提示信息"
+                    },
+                    "errors" : {
+                      "type" : "array",
+                      "description" : "错误详情列表",
+                      "items" : {
+                        "$ref" : "#/components/schemas/Error"
+                      },
+                      "title" : "errors"
+                    },
+                    "data" : {
+                      "type" : "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated" : false,
+        "security" : [ ],
+        "x-hope-operation" : {
+          "deprecated" : false,
+          "wrapper" : true,
+          "inputPlural" : false,
+          "outputPlural" : false,
+          "pageable" : false,
+          "protoFrom" : "com/apihug/sample/proto/api/demo001/api.proto",
+          "empty" : false,
+          "serviceClz" : "com.apihug.sample.wire.api.demo001.VIPService",
+          "priority" : "LOW",
+          "group" : "CUSTOMER"
         }
       }
     }
@@ -455,7 +523,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-06-14",
-      "updatedTimestamp" : "2024-08-02 17:13:24",
+      "updatedTimestamp" : "2024-08-08 08:08:20",
       "createdBy" : "admin"
     },
     "persistence" : {

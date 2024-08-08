@@ -32,6 +32,7 @@ import java.lang.Object;
 import java.lang.Override;
 import java.lang.String;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
@@ -285,6 +286,33 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
     }.build());
     _sc_paths_item_1.put("group", "CUSTOMER");
     _sc_paths_item_1.put("empty", false);
+    _sc_paths_item_1.put("questions", Arrays.asList("how to do something","I want to buy a apple","Jake want to eat something spicy"));
+    // --------------------------
+    // Register Path of this Service: [2] "/vip/post-test"
+    sc_paths.add("/vip/post-test");
+    Map _sc_paths_item_2 = pathsContext.computeIfAbsent("/vip/post-test", s-> new LinkedHashMap());
+    _sc_paths_item_2.put("action", "POST");
+    _sc_paths_item_2.put("method", "GiveMePost");
+    _sc_paths_item_2.put("wrapper", true);
+    _sc_paths_item_2.put("pageable", false);
+    _sc_paths_item_2.put("request", false);
+    _sc_paths_item_2.put("response", false);
+    _sc_paths_item_2.put("session", false);
+    _sc_paths_item_2.put("inputPlural", false);
+    _sc_paths_item_2.put("outputPlural", false);
+    _sc_paths_item_2.put("priority", "LOW");
+    _sc_paths_item_2.put("requestRef", "com.apihug.sample.wire.api.demo001.values.ExampleRequest");
+    _sc_paths_item_2.put("responseRef", "hope.common.adaptor.Empty");
+    _sc_paths_item_2.put("operation", new Builder<Operation>() {
+      @Override
+      public Operation build() {
+        final Operation operation =  new Operation();
+        operation.setDescription("test post example");
+        return operation;
+      }
+    }.build());
+    _sc_paths_item_2.put("group", "CUSTOMER");
+    _sc_paths_item_2.put("empty", false);
     // END-[Service Context] com.apihug.sample.wire.api.demo001.VIPService
     // ----------------------------------------------------
   }

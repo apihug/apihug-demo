@@ -5,47 +5,62 @@ package com.apihug.sample.proto.api.demo001;
 import "extend/domain.proto";
 import "google/protobuf/empty.proto";
 import "swagger/annotations.proto";
+import "com/apihug/sample/proto/api/demo001/values/request.proto";
 
 option (hope.domain.kind) = IDL;
 
 service VIPService {
-    option (hope.swagger.svc) = {
-        path: "/vip";
-        description: "Service for VIP";
-    };
-    rpc GetMeSth (google.protobuf.Empty) returns (google.protobuf.Empty) {
-        option (hope.swagger.operation) = {
-            get: "/get-sth";
-            description: "Get me something";
-            tags: "user";
-            priority: MIDDLE;
-            authorization:{
-                rbac:{
-                    roles: {
-                        roles: ["ADMIN"]
-                    }
-                    combinator: AND
-                    authorities: ["USER_DELETE"];
-                }
-            }
+  option (hope.swagger.svc) = {
+    path: "/vip";
+    description: "Service for VIP";
+  };
+  rpc GetMeSth (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      get: "/get-sth";
+      description: "Get me something";
+      tags: "user";
+      priority:  MIDDLE;
+      authorization:{
+        rbac:{
+          roles: {
+            roles: ["ADMIN"]
+          }
+          combinator: AND
+          authorities: ["USER_DELETE"];
+        }
+      }
+      questions:[
+        "how to do something",
+        "I want to buy a apple",
+        "Jake want to eat something spicy"
+      ]
 
-        };
     };
+  };
+
+
+  rpc GiveMePost (com.apihug.sample.proto.api.demo001.values.ExampleRequest) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      post: "/post-test";
+      description: "test post example";
+      priority: LOW;
+    };
+  }
 
 }
 
 service Demo001Service {
-    option (hope.swagger.svc) = {
-        path: "/demo-001";
-        description: "Demo-001";
-    };
+  option (hope.swagger.svc) = {
+    path: "/demo-001";
+    description: "Demo-001";
+  };
 
-    rpc ExampleSayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
-        option (hope.swagger.operation) = {
-            get: "/hello-world";
-            description: "Say hello to the world";
-            tags: "project";
-            priority: HIGH;
-        };
+  rpc ExampleSayHello (google.protobuf.Empty) returns (google.protobuf.Empty) {
+    option (hope.swagger.operation) = {
+      get: "/hello-world";
+      description: "Say hello to the world";
+      tags: "project";
+      priority: HIGH;
     };
+  };
 }
