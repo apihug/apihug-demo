@@ -66,11 +66,10 @@ public class TestTester implements T {
     // Add Multiple
     request.multiPart(new MultiPartSpecBuilder(resource("https://example.com/file.test")).mimeType("application/pdf").build());
     String requestJson =  """
-
     {	
       "name" : "Marquis Wolff"	
     }
-                """;
+        """;
     final DocumentContext parsedRequest =  JsonPath.parse(requestJson);
     _requests.add(parsedRequest);
     // Enrich the parsed json

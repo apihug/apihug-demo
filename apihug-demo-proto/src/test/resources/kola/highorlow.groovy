@@ -10,7 +10,7 @@ Feature.make {
         Given {
             get("https://www.gongkongmall.com/")
         }
-        And {
+        Then {
             isOk()
         }
         postScript {

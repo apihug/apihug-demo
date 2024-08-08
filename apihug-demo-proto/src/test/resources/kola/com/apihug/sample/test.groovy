@@ -33,7 +33,7 @@ Feature.make {
 
             }
         }
-        And {
+        Then {
             isOk()
         }
     }

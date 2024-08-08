@@ -19,7 +19,7 @@ Feature.make {
                 set("user.name", "jake")
             }
         }
-        And {
+        Then {
             isOk()
         }
     }
@@ -28,7 +28,7 @@ Feature.make {
         Given {
             get("https://baidu.com")
         }
-        And {
+        Then {
             isOk()
         }
     }
