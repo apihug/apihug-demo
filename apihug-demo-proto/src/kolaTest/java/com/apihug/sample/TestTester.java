@@ -14,6 +14,7 @@ import io.restassured.specification.RequestSpecification;
 import java.lang.Override;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 import javax.annotation.processing.Generated;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.ClassOrderer;
@@ -74,6 +75,12 @@ public class TestTester implements T {
     _requests.add(parsedRequest);
     // Enrich the parsed json
     template(parsedRequest, ExampleRequest.class, false);
+    new Consumer<DocumentContext>() {
+      @Override
+      public void accept(final DocumentContext req) {
+        setValue("$.example.name", req, "Another name");
+      }
+    }.accept(parsedRequest);
     // Request Body Class Mapping {@link com.apihug.sample.wire.api.demo001.values.ExampleRequest}
     final ExampleRequest requestObj = MockEngine.converter(ExampleRequest.class, parsedRequest.json());
     request.body(requestObj);

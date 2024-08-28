@@ -128,7 +128,7 @@
           "protoFrom" : "com/apihug/sample/proto/api/demo001/api.proto",
           "empty" : false,
           "serviceClz" : "com.apihug.sample.wire.api.demo001.VIPService",
-          "priority" : "MIDDLE",
+          "priority" : "HIGH",
           "group" : "CUSTOMER",
           "security" : {
             "roles" : [ "ADMIN" ],
@@ -429,14 +429,22 @@
         "type" : "object",
         "description" : "A sample plain object definition",
         "properties" : {
-          "aga" : {
+          "age" : {
             "type" : "number",
             "format" : "int64",
             "description" : "age of human",
             "example" : "Example of this field"
+          },
+          "name" : {
+            "type" : "string",
+            "description" : "name of a chinese people",
+            "x-hope-mock" : {
+              "type" : "NAME",
+              "name" : "cname"
+            }
           }
         },
-        "required" : [ "aga" ],
+        "required" : [ "age" ],
         "x-hope-rt-meta" : {
           "clz" : "com.apihug.sample.wire.api.demo001.values.SampleRequest",
           "protoFrom" : "com/apihug/sample/proto/api/demo001/values/request.proto"
@@ -523,7 +531,7 @@
     "status" : {
       "deprecated" : false,
       "createdTimestamp" : "2024-06-14",
-      "updatedTimestamp" : "2024-08-08 22:41:56",
+      "updatedTimestamp" : "2024-08-28 13:31:55",
       "createdBy" : "admin"
     },
     "persistence" : {

@@ -20,7 +20,7 @@ Feature.make {
 }
             """
             body {
-                //set("example.name", "Another name")
+                set("example.name", "Another name")
             }
             multipart {
                 file {

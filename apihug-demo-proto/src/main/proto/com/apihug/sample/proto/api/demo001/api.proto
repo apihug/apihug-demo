@@ -14,12 +14,13 @@ service VIPService {
     path: "/vip";
     description: "Service for VIP";
   };
+
   rpc GetMeSth (google.protobuf.Empty) returns (google.protobuf.Empty) {
     option (hope.swagger.operation) = {
       get: "/get-sth";
       description: "Get me something";
       tags: "user";
-      priority:  MIDDLE;
+      priority:  HIGH;
       authorization:{
         rbac:{
           roles: {
@@ -34,7 +35,6 @@ service VIPService {
         "I want to buy a apple",
         "Jake want to eat something spicy"
       ]
-
     };
   };
 

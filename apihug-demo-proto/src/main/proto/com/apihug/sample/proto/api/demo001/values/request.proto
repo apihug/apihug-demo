@@ -8,36 +8,44 @@ import "swagger/annotations.proto";
 option (hope.domain.kind) = BEAN;
 
 message SampleRequest {
-    option (hope.swagger.schema) = {
-        json_schema: {
-            description: "A sample plain object definition";
-        };
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "A sample plain object definition";
     };
-    uint64 aga = 1 [(hope.swagger.field) = {
-        description: "age of human";
-        example: "Example of this field";
-        empty: FALSE;
-    }];
+  };
+  uint64 age = 1 [(hope.swagger.field) = {
+    description: "age of human";
+    example: "Example of this field";
+    empty: FALSE;
+  }];
 
+  string name = 2 [(hope.swagger.field) = {
+    description: "name of a chinese people";
+    mock:{
+      chinese_name_rule:{
+        type: NAME
+      }
+    }
+  }];
 }
 
 
 message ExampleRequest {
-    option (hope.swagger.schema) = {
-        json_schema: {
-            description: "This is an example request";
-        };
+  option (hope.swagger.schema) = {
+    json_schema: {
+      description: "This is an example request";
     };
+  };
 
-    string name = 1 [(hope.swagger.field) = {
-        description: "name of the user";
-        example: "My Lord"
-        empty: FALSE;
-        mock: {
-            nature: NAME
-        }
-        max_length: {
-            value: 32
-        }
-    }];
+  string name = 1 [(hope.swagger.field) = {
+    description: "name of the user";
+    example: "My Lord"
+    empty: FALSE;
+    mock: {
+      nature: NAME
+    }
+    max_length: {
+      value: 32
+    }
+  }];
 }

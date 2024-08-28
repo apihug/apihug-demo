@@ -29,21 +29,36 @@ public class SampleRequest extends SuperParentClass {
       requiredMode = Schema.RequiredMode.REQUIRED,
       example = "Example of this field"
   )
-  protected Long aga;
+  protected Long age;
 
-  public Long getAga() {
-    return aga;
+  @Schema(
+      description = "name of a chinese people"
+  )
+  protected String name;
+
+  public Long getAge() {
+    return age;
   }
 
-  public SampleRequest setAga(Long aga) {
-    this.aga = aga;
+  public SampleRequest setAge(Long age) {
+    this.age = age;
+    return this;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public SampleRequest setName(String name) {
+    this.name = name;
     return this;
   }
 
   @Override
   public String toString() {
     final StringBuilder builder = new StringBuilder("SampleRequest{");
-    builder.append("aga=").append(aga);
+    builder.append("age=").append(age);
+    builder.append(", name=").append(name);
     return builder.append('}').toString();
   }
 }

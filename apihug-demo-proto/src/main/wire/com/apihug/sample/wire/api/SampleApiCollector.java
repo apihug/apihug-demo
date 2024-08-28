@@ -260,7 +260,7 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
     _sc_paths_item_1.put("session", false);
     _sc_paths_item_1.put("inputPlural", false);
     _sc_paths_item_1.put("outputPlural", false);
-    _sc_paths_item_1.put("priority", "MIDDLE");
+    _sc_paths_item_1.put("priority", "HIGH");
     _sc_paths_item_1.put("requestRef", "hope.common.adaptor.Empty");
     _sc_paths_item_1.put("responseRef", "hope.common.adaptor.Empty");
     _sc_paths_item_1.put("operation", new Builder<Operation>() {
@@ -389,11 +389,11 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
         return res;
       }
     }.build());
-    // Add field 0 aga
+    // Add field 0 age
     ComponentItem<Schema> _0 = new ComponentItem();
     _0.setClz("java.lang.Long");
-    _0.setName("aga");
-    _0.setFieldName("aga");
+    _0.setName("age");
+    _0.setFieldName("age");
     _0.setPayload(new Builder<Schema>() {
       @Override
       public Schema build() {
@@ -413,6 +413,37 @@ public final class SampleApiCollector implements Collector<OpenAPI, Schema, ApiR
       }
     }.build());
     res.addItem(_0);
+    // Add field 1 name
+    ComponentItem<Schema> _1 = new ComponentItem();
+    _1.setClz("java.lang.String");
+    _1.setName("name");
+    _1.setFieldName("name");
+    _1.setPayload(new Builder<Schema>() {
+      @Override
+      public Schema build() {
+        Schema res  = new Schema();
+        res.setDescription("name of a chinese people");
+        res.setSpecVersion(SpecVersion.V30);
+        return res;
+      }
+    }.build());
+    _1.setValidation(new Builder<Validation>() {
+      @Override
+      public Validation build() {
+        Validation res = new Validation();
+        return res;
+      }
+    }.build());
+    _1.setRule(new Builder<Map>() {
+      @Override
+      public Map build() {
+        Map res = new LinkedHashMap();
+        res.put("type", "NAME");
+        res.put("name", "cname");
+        return res;
+      }
+    }.build());
+    res.addItem(_1);
   }
 
   private final void _build_component_com_apihug_sample_wire_infra_demo001_Demo001Enum() {
