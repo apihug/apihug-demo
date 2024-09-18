@@ -1,0 +1,22 @@
+{
+  "knowledge" : [ {
+    "name" : "user_name",
+    "description" : "name of user",
+    "attributeType" : "STRING",
+    "notNull" : false,
+    "notEmpty" : false,
+    "notBlank" : true,
+    "pattern" : "",
+    "minLength" : 1,
+    "maxLength" : 64,
+    "sample" : "jake",
+    "trackId" : "04b01f17-dc5b-44ce-b7ad-da7744dae723",
+    "usage" : "BOTH"
+  } ],
+  "name" : "apihug-demo-proto",
+  "application" : "apihug-demo",
+  "packageName" : "com.apihug.sample",
+  "domain" : "sample",
+  "identifier" : "apihug-demo-proto",
+  "module" : "apihug-demo-proto"
+}
