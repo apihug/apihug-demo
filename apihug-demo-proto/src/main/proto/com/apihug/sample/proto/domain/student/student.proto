@@ -1,0 +1,59 @@
+syntax = "proto3";
+
+package com.apihug.sample.proto.domain.student;
+
+import "extend/domain.proto";
+import "domain/annotations.proto";
+
+option (hope.domain.kind) = ENTITY;
+
+//Shortcut & LiveTemplate: https://apihug.com/docs/idea/000-shortcut#shortcut
+//
+//| Type  | Comment             | Condition                                             |
+//|-------|---------------------|-------------------------------------------------------|
+//| ety   | Add Entity          | outside the message block                             |
+//| eit   | Add Entity Field    | inside the message block                              |
+//| eix   | Add Entity Index    | inside the message option block(no duplicates detect) |
+//| eux   | Add Entity Unique   | inside the message option block(no duplicates detect) |
+
+
+message StudentEntity {
+
+
+    string name = 1 [(hope.persistence.column) = {
+        name: "NAME",
+        description: "name of the account",
+        nullable: FALSE,
+        updatable: FALSE,
+        length: {
+            value: 32
+        },
+        type: VARCHAR
+    }];
+
+    string email = 2 [(hope.persistence.column) = {
+        name: "EMAIL",
+        description: "email of the account",
+        updatable: FALSE,
+        unique: TRUE,
+        length: {
+            value: 64
+        },
+        type: VARCHAR
+    }];
+
+    option (hope.persistence.table) = {
+        name: "STUDENT",
+        description: "Example Big table",
+
+        indexes: {
+            name: "IDX_STUDENT_NAME",
+            column_list: ["name"]
+        },
+        indexes: {
+            name: "IDX_STUDENT_EMAIL",
+            column_list: ["email"]
+        },
+        wires: [ALL]
+    };
+}

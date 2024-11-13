@@ -1,7 +1,7 @@
 {
   "domain" : "sample",
   "version" : "0.1.1-SNAPSHOT",
-  "lastBuildTime" : "2024-08-29 20:28:17",
+  "lastBuildTime" : "2024-10-24 15:18:27",
   "codeOffset" : 0,
   "name" : "DemoAuthorityEnum",
   "javaClass" : "com.apihug.sample.wire.infra.settings.DemoAuthorityEnum",
