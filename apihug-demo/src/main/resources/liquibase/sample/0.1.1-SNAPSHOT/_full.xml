@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+
+  <changeSet id="0.1.1-SNAPSHOT-1000000000" author="hope" context="auto" labels="0.1.1-SNAPSHOT">
+    <createTable remarks="Example Big table" tableName="STUDENT">
+      <column name="ID" type="BIGINT" autoIncrement="true" remarks="Record ID, Primary Key, Auto Increment">
+        <constraints nullable="false" primaryKey="true" unique="true"></constraints>
+      </column>
+      <column name="NAME" type="VARCHAR(32)" remarks="name of the account">
+        <constraints nullable="false"></constraints>
+      </column>
+      <column name="EMAIL" type="VARCHAR(64)" remarks="email of the account">
+        <constraints unique="true"></constraints>
+      </column>
+      <column name="WEALTH" type="DECIMAL(4,4)" remarks="money own"></column>
+      <column name="VERSION" type="BIGINT" defaultValueNumeric="0" remarks="Record version, optimistic lock">
+        <constraints nullable="false"></constraints>
+      </column>
+      <column name="CREATED_AT" type="TIMESTAMP" remarks="Record created at timestamp"></column>
+      <column name="CREATED_BY" type="BIGINT" remarks="Record created by user ID"></column>
+      <column name="UPDATED_AT" type="TIMESTAMP" remarks="Record updated at timestamp"></column>
+      <column name="UPDATED_BY" type="BIGINT" remarks="Record updated by user ID"></column>
+      <column name="DELETED" type="BOOLEAN" defaultValueBoolean="false" remarks="Record deleted flag, soft delete"></column>
+      <column name="DELETED_AT" type="TIMESTAMP" remarks="Record deleted at"></column>
+      <column name="DELETED_BY" type="BIGINT" defaultValue="0" remarks="Record deleted by"></column>
+      <column name="TENANT_ID" type="BIGINT" defaultValue="0" remarks="Record tenant ID"></column>
+    </createTable>
+    <createIndex tableName="STUDENT" indexName="IDX_STUDENT_NAME">
+      <column name="NAME"></column>
+    </createIndex>
+    <createIndex tableName="STUDENT" indexName="IDX_STUDENT_EMAIL">
+      <column name="EMAIL"></column>
+    </createIndex>
+  </changeSet>
+</databaseChangeLog>

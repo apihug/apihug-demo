@@ -8,7 +8,9 @@ import hope.common.spring.security.context.HopeContextHolder;
 import hope.common.spring.util.NumberUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import javax.annotation.Generated;
 
+@Generated("H.O.P.E. Infra Team")
 @Service
 public class SampleAuditContextSupplier implements AuditContextSupplier {
 

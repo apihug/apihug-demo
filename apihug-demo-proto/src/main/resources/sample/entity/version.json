@@ -1,8 +1,7 @@
 {
   "current" : {
     "version" : "0.1.1-SNAPSHOT",
-    "createdTimestamp" : "2024-06-14 16:22:26",
+    "createdTimestamp" : "2024-11-29 09:51:19",
     "updateTimestamp" : "2024-11-29 13:52:54"
-  },
-  "previous" : [ ]
+  }
 }

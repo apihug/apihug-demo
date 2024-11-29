@@ -1,0 +1,87 @@
+{
+  "tables" : {
+    "StudentEntity" : {
+      "deprecated" : false,
+      "clz" : "com.apihug.sample.wire.domain.student.StudentEntity",
+      "name" : "STUDENT",
+      "manually" : true,
+      "description" : "Example Big table",
+      "indexes" : [ {
+        "name" : "IDX_STUDENT_NAME",
+        "columnList" : [ "NAME" ],
+        "unique" : false
+      }, {
+        "name" : "IDX_STUDENT_EMAIL",
+        "columnList" : [ "EMAIL" ],
+        "unique" : false
+      } ],
+      "protoFrom" : "com/apihug/sample/proto/domain/student/student.proto",
+      "protoEntity" : "StudentEntity",
+      "wires" : [ "ALL" ],
+      "columns" : {
+        "name" : {
+          "deprecated" : false,
+          "fieldName" : "name",
+          "name" : "NAME",
+          "manually" : true,
+          "clz" : "java.lang.String",
+          "description" : "name of the account",
+          "unique" : false,
+          "nullable" : false,
+          "insertable" : true,
+          "updatable" : false,
+          "searchable" : false,
+          "sortable" : false,
+          "length" : 32,
+          "enumType" : "DEFAULT",
+          "type" : "VARCHAR",
+          "plural" : false,
+          "enumColumn" : false,
+          "id" : false
+        },
+        "email" : {
+          "deprecated" : false,
+          "fieldName" : "email",
+          "name" : "EMAIL",
+          "manually" : true,
+          "clz" : "java.lang.String",
+          "description" : "email of the account",
+          "unique" : true,
+          "nullable" : true,
+          "insertable" : true,
+          "updatable" : false,
+          "searchable" : false,
+          "sortable" : false,
+          "length" : 64,
+          "enumType" : "DEFAULT",
+          "type" : "VARCHAR",
+          "plural" : false,
+          "enumColumn" : false,
+          "id" : false
+        },
+        "wealth" : {
+          "deprecated" : false,
+          "fieldName" : "wealth",
+          "name" : "WEALTH",
+          "manually" : true,
+          "clz" : "java.math.BigDecimal",
+          "description" : "money own",
+          "unique" : false,
+          "nullable" : true,
+          "insertable" : true,
+          "updatable" : true,
+          "searchable" : false,
+          "sortable" : false,
+          "length" : 22,
+          "precision" : 4,
+          "scale" : 4,
+          "enumType" : "DEFAULT",
+          "type" : "DECIMAL",
+          "plural" : false,
+          "enumColumn" : false,
+          "id" : false
+        }
+      }
+    }
+  }
+}

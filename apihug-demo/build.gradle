@@ -36,7 +36,7 @@ dependencies {
     implementation(libs.apihugCommonProto)
     implementation(libs.swaggerV3Core)
     //Others:
-    
+
     implementation(libs.apihugSpringCache)
     implementation(libs.ehcache)
     implementation(libs.apihugSpringData)
@@ -45,12 +45,13 @@ dependencies {
     //Hope END
 
     //Spring starter START
-    
+
     implementation(libs.springBootStarterActuator)
     implementation(libs.springBootStarterCache)
     implementation(libs.springBootStarterJdbc)
     implementation(libs.springBootStarterValidation)
     implementation(libs.springBootStarterWeb)
+    implementation(libs.springBootStarterDataJdbc)
     developmentOnly(libs.springBootDevtools)
     runtimeOnly(libs.h2)
     runtimeOnly(libs.mysqlConnectorJ)
